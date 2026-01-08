@@ -6,9 +6,18 @@ This project is developed by an independent developer from Croatia 🇭🇷.
 ![LED Matrix Project](docs/images/20260108_022224.jpg)
 
 ---
+**TL;DR:**  
+
+PiMatrixOS is a Python-based platform for driving HUB75 RGB LED matrix panels with a Raspberry Pi.
+It provides an app-based launcher, dashboards, media playback, games, and Home Assistant integration,
+designed for DIY builders, makers, and embedded display projects.
+
+---
 ## 🎥 Demo Video
 [![PiMatrixOS Demo](https://img.youtube.com/vi/Wgohh8m4hvw/0.jpg)](https://www.youtube.com/watch?v=Wgohh8m4hvw)
+⚠️ Due to PWM and refresh rate of the LED panels, flicker may be visible in camera recordings.
 
+--
 ## ✨ Features
 
 - App-based launcher with modular application architecture
@@ -27,7 +36,6 @@ This project is developed by an independent developer from Croatia 🇭🇷.
 - Rescue launcher for recovery and safe startup
 - Configuration via JSON files
 - Written in Python with a focus on readability and extensibility
-
 
 ---
 
@@ -63,7 +71,6 @@ This project is developed by an independent developer from Croatia 🇭🇷.
 ⚠️ **Warning:** LED matrix panels can draw high current at full brightness. Use adequately rated wiring and connectors.
 
 ---
-
 ## 🔌 Display Wiring
 
 ### HUB75 to Raspberry Pi GPIO Mapping
@@ -98,7 +105,6 @@ Example wiring images are provided below to illustrate panel orientation and cha
 ![LED Matrix Wiring Diagrem](docs/images/images.jpg)
 
 ---
-
 ## 🖥️ Software Requirements
 
 - Raspberry Pi OS
@@ -139,7 +145,6 @@ python3 main.py
 (Detailed setup and wiring documentation will be added.)
 
 ---
-
 ## 🔌 Supported Use Cases
 
 - Information displays
@@ -149,7 +154,6 @@ python3 main.py
 - Educational and hobby projects
 
 ---
-
 ## 📜 License
 
 PiMatrixOS is **open-source and free for personal and non-commercial use**.
@@ -162,7 +166,6 @@ For commercial licensing inquiries, please contact:
 See the `LICENSE` file for full terms.
 
 ---
-
 ## ☕ Support the Project
 
 If you find PiMatrixOS useful and would like to support further development, you can do so via:
@@ -173,7 +176,6 @@ If you find PiMatrixOS useful and would like to support further development, you
 Support is completely optional and not required to use the software.
 
 ---
-
 ## 📌 Project Status
 
 PiMatrixOS is under active development. Features, performance improvements, and documentation updates are ongoing.
