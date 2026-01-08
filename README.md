@@ -3,10 +3,10 @@
 PiMatrixOS is a modular LED matrix platform for Raspberry Pi, designed to drive multiple LED matrix displays through an app-based launcher. It provides media playback, dashboards, games, Home Assistant integration, and gamepad support in a single unified system.
 
 This project is developed by an independent developer from Croatia 🇭🇷.
+![LED Matrix Project](docs/images/20260108_022224.jpg)
 
 ---
 ## 🎥 Demo Video
-![LED Matrix Project](docs/images/20260108_022224.jpg)
 [![PiMatrixOS Demo](https://img.youtube.com/vi/Wgohh8m4hvw/0.jpg)](https://www.youtube.com/watch?v=Wgohh8m4hvw)
 
 ## ✨ Features
