@@ -137,7 +137,28 @@ The procedure is intended for users with basic Linux and SSH knowledge.
 
 ---
 
-### 1️⃣ Prepare Raspberry Pi OS
+### ⚡ Automated Installation
+
+For a fully automated installation on a clean Raspberry Pi OS Lite (32-bit) system:
+
+```bash
+git clone https://github.com/dominikelektricar/pimatrixos.git
+cd pimatrixos
+chmod +x install.sh
+sudo ./install.sh
+```
+After installation, start PiMatrixOS with:
+
+```bash
+Kopiraj kod
+cd ~/pimatrixos
+sudo python3 launcher.py
+```
+---
+
+### ⚡ Manual Installation
+
+#### 1️⃣ Prepare Raspberry Pi OS
 
 - Download and install **Raspberry Pi OS Lite (32-bit)** using **Raspberry Pi Imager**
 - Flash the OS to the SD card
@@ -147,7 +168,7 @@ Once booted, connect to the Raspberry Pi via **SSH** (e.g. using PuTTY).
 
 ---
 
-### 2️⃣ System Update and Required Packages
+#### 2️⃣ System Update and Required Packages
 
 Update the system and install required build tools and Python dependencies:
 
@@ -169,7 +190,7 @@ sudo apt install -y python3-setuptools python3-wheel
 
 ---
 
-### 3️⃣ Install rpi-rgb-led-matrix Library
+#### 3️⃣ Install rpi-rgb-led-matrix Library
 
 PiMatrixOS relies on the excellent **rpi-rgb-led-matrix** library by hzeller.
 
@@ -189,7 +210,7 @@ cd ~
 
 ---
 
-### 4️⃣ Test LED Matrix Hardware
+#### 4️⃣ Test LED Matrix Hardware
 
 Before running PiMatrixOS, it is strongly recommended to verify that the LED panels and wiring work correctly.
 
@@ -217,7 +238,7 @@ cd ~
 
 ---
 
-### 5️⃣ Install and Run PiMatrixOS
+#### 5️⃣ Install and Run PiMatrixOS
 
 Clone the PiMatrixOS repository:
 
