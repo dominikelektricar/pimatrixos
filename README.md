@@ -14,10 +14,12 @@ designed for DIY builders, makers, and embedded display projects.
 
 ---
 ## 🎥 Demo Video
+
 [![PiMatrixOS Demo](https://img.youtube.com/vi/Wgohh8m4hvw/0.jpg)](https://www.youtube.com/watch?v=Wgohh8m4hvw)
+
 ⚠️ Due to PWM and refresh rate of the LED panels, flicker may be visible in camera recordings.
 
---
+---
 ## ✨ Features
 
 - App-based launcher with modular application architecture
