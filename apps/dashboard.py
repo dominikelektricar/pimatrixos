@@ -8,7 +8,7 @@
 # - START or SELECT: open menu
 # - Menu: UP/DOWN select, OK confirm/toggle/edit, BACK cancel/close
 #
-# Config: /home/pi/led/config.json
+# Config: /home/pi/pimatrixos/config.json
 #   postcode: "10000"
 #   dash_autoscroll: true/false
 #   dash_autodim: true/false
@@ -36,8 +36,8 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 PIXEL_MAPPER = "U-mapper;StackToRow:Z;Rotate:180"
 W, H = 128, 64
 
-CONFIG_PATH = "/home/pi/led/config.json"
-LAUNCHER_PATH = "/home/pi/led/launcher.py"
+CONFIG_PATH = "/home/pi/pimatrixos/config.json"
+LAUNCHER_PATH = "/home/pi/pimatrixos/launcher.py"
 
 # Weather
 WEATHER_REFRESH_SEC = 15 * 60  # 15 min cache
@@ -827,3 +827,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
