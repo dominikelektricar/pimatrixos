@@ -6,7 +6,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 PIXEL_MAPPER = "U-mapper;StackToRow:Z;Rotate:180"
 W, H = 128, 64
 
-CONFIG_PATH = "/home/pi/led/ha_config.json"
+CONFIG_PATH = "/home/pi/pimatrixos/ha_config.json"
 
 DEFAULT = {
     "ha_url": "http://homeassistant.local:8123",
