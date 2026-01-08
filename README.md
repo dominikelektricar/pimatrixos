@@ -5,6 +5,9 @@ PiMatrixOS is a modular LED matrix platform for Raspberry Pi, designed to drive 
 This project is developed by an independent developer from Croatia 🇭🇷.
 
 ---
+## 🎥 Demo Video
+
+[![PiMatrixOS Demo](https://img.youtube.com/vi/Wgohh8m4hvw/0.jpg)](https://www.youtube.com/watch?v=Wgohh8m4hvw)
 
 ## ✨ Features
 
