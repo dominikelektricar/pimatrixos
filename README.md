@@ -142,6 +142,9 @@ The procedure is intended for users with basic Linux and SSH knowledge.
 For a fully automated installation on a clean Raspberry Pi OS Lite (32-bit) system:
 
 ```bash
+sudo apt update
+sudo apt install -y git
+
 git clone https://github.com/dominikelektricar/pimatrixos.git
 cd pimatrixos
 chmod +x install.sh
