@@ -6,7 +6,7 @@ This project is developed by an independent developer from Croatia 🇭🇷.
 
 ---
 ## 🎥 Demo Video
-
+![LED Matrix Project](docs/images/20260108_022224.jpg)
 [![PiMatrixOS Demo](https://img.youtube.com/vi/Wgohh8m4hvw/0.jpg)](https://www.youtube.com/watch?v=Wgohh8m4hvw)
 
 ## ✨ Features
@@ -38,6 +38,10 @@ This project is developed by an independent developer from Croatia 🇭🇷.
 * Required Python libraries (see `requirements.txt`)
 
 ---
+### Wiring Examples
+
+![LED Matrix Wiring Example Display](docs/images/20260108_022228.jpg)
+![LED Matrix Wiring Diagrem](docs/images/images.jpg)
 
 ## 🚀 Installation (Basic)
 
