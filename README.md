@@ -11,38 +11,117 @@ This project is developed by an independent developer from Croatia 🇭🇷.
 
 ## ✨ Features
 
-* App-based start launcher
-* Video and image playback on LED matrix displays
-* Dashboard with weather forecast and system information
-* Home Assistant integration
-* Built-in mini games
-* Gamepad controller support
-* Modular and extensible architecture
-* Written in Python
+- App-based launcher with modular application architecture
+- Multi-panel LED matrix support (tested with 4 chained displays)
+- Video and image playback optimized for LED matrix panels
+- Dashboard application with:
+  - Weather forecast
+  - System status and runtime information
+- Home Assistant integration via dedicated app module
+- Built-in games designed for low-resolution LED matrices:
+  - Pacman
+  - Snake
+  - Tetris
+  - Pong
+- Gamepad input support for interactive applications and games
+- Rescue launcher for recovery and safe startup
+- Configuration via JSON files
+- Written in Python with a focus on readability and extensibility
+
 
 ---
 
 ## 🧰 Hardware Requirements
 
-* Raspberry Pi 3 (other models may work)
-* 4x LED Matrix Displays (chained)
-* Suitable power supply for LED panels
-* Optional: USB / Bluetooth gamepad
+### LED Matrix Displays
+
+- **Model:** P3-6432-2121-16S-D1.0
+- **Interface:** HUB75-compatible RGB LED matrix panels
+- **Resolution per panel:** 64×32 pixels
+- **Panel count:** 4 panels
+- **Total resolution:** **128×64 pixels** (panels chained)
+- Panels are connected in a daisy-chain configuration using HUB75 ribbon cables
+
+### Raspberry Pi
+
+- Raspberry Pi 3 (tested)
+- GPIO is used directly for HUB75 signal output
+
+### Input Device
+
+- **SNES console controller**
+- Used for navigation in the launcher and for in-game input
+- Connected via GPIO and read directly by the application
+
+### Power Supply
+
+- External **5 V / 100 W** power supply
+- LED panels are powered separately from the Raspberry Pi
+- **Common ground between Raspberry Pi and LED power supply is required**
+- Power should be injected evenly to avoid voltage drop across panels
+
+⚠️ **Warning:** LED matrix panels can draw high current at full brightness. Use adequately rated wiring and connectors.
+
+---
+
+## 🔌 Display Wiring
+
+### HUB75 to Raspberry Pi GPIO Mapping
+
+The following table shows the exact pin mapping used between the HUB75 LED matrix interface and the Raspberry Pi GPIO header.
+
+| HUB75 Signal | Raspberry Pi Pin | GPIO |
+|-------------|------------------|------|
+| R1 | Pin 29 | GPIO5 |
+| B1 | Pin 31 | GPIO6 |
+| R2 | Pin 32 | GPIO12 |
+| B2 | Pin 16 | GPIO23 |
+| A  | Pin 15 | GPIO22 |
+| C  | Pin 13 | GPIO27 |
+| CLK | Pin 11 | GPIO17 |
+| OE  | Pin 7  | GPIO4 |
+| GND | Pin 34 | GND |
+| LAT (LTC) | Pin 40 | GPIO21 |
+| D  | Pin 38 | GPIO20 |
+| B  | Pin 37 | GPIO26 |
+| E  | Pin 18 | GPIO24 |
+| G2 | Pin 36 | GPIO16 |
+| GND | Pin 6  | GND |
+| G1 | Pin 33 | GPIO13 |
+
+⚠️ **Note:** Ensure that the Raspberry Pi and LED panel power supply share a common ground.
+
+### Wiring Examples
+
+Example wiring images are provided below to illustrate panel orientation and chaining order.
+![LED Matrix Wiring Example Display](docs/images/20260108_022228.jpg)
+![LED Matrix Wiring Diagrem](docs/images/images.jpg)
 
 ---
 
 ## 🖥️ Software Requirements
 
-* Raspberry Pi OS
-* Python 3
-* Required Python libraries (see `requirements.txt`)
+- Raspberry Pi OS
+- Python 3
+- Required Python libraries (see `requirements.txt`)
 
 ---
-### Wiring Examples
+## 🏗️ Architecture Overview
 
-![LED Matrix Wiring Example Display](docs/images/20260108_022228.jpg)
-![LED Matrix Wiring Diagrem](docs/images/images.jpg)
+PiMatrixOS is structured around a lightweight launcher that dynamically loads applications from the `apps/` directory.
+Each application is implemented as an independent Python module, allowing easy extension and customization.
 
+Key components:
+- `launcher.py` – Main application launcher and runtime controller
+- `launcher_rescue.py` – Minimal recovery launcher for safe startup
+- `apps/` – Modular applications (media, dashboard, games, Home Assistant)
+- `config.json` – Core system configuration
+- `ha_config.json` – Home Assistant connection configuration
+
+Applications share a common rendering pipeline targeting LED matrix displays, while input handling (e.g. gamepad)
+remains abstracted from individual app logic.
+
+---
 ## 🚀 Installation (Basic)
 
 ```bash
@@ -63,11 +142,11 @@ python3 main.py
 
 ## 🔌 Supported Use Cases
 
-* Information displays
-* DIY smart dashboards
-* Home automation visual panels
-* Interactive LED installations
-* Educational and hobby projects
+- Information displays
+- DIY smart dashboards
+- Home automation visual panels
+- Interactive LED installations
+- Educational and hobby projects
 
 ---
 
