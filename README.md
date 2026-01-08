@@ -150,7 +150,6 @@ sudo ./install.sh
 After installation, start PiMatrixOS with:
 
 ```bash
-Kopiraj kod
 cd ~/pimatrixos
 sudo python3 launcher.py
 ```
