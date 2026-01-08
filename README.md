@@ -40,7 +40,7 @@ This project is developed by an independent developer from Croatia 🇭🇷.
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/pimatrixos.git
+git clone https://github.com/dominikelektricar/pimatrixos.git
 cd pimatrixos
 
 # Install dependencies
@@ -81,8 +81,8 @@ See the `LICENSE` file for full terms.
 
 If you find PiMatrixOS useful and would like to support further development, you can do so via:
 
-* Buy Me a Coffee: (link coming soon)
-* PayPal Donate: (link coming soon)
+- Buy Me a Coffee: https://buymeacoffee.com/pimatrixos
+- PayPal Donate: https://paypal.me/pimatrixos
 
 Support is completely optional and not required to use the software.
 
