@@ -130,21 +130,120 @@ Applications share a common rendering pipeline targeting LED matrix displays, wh
 remains abstracted from individual app logic.
 
 ---
-## 🚀 Installation (Basic)
+## 🚀 Installation
+
+This section describes a **complete step-by-step installation** starting from a clean Raspberry Pi setup.
+The procedure is intended for users with basic Linux and SSH knowledge.
+
+---
+
+### 1️⃣ Prepare Raspberry Pi OS
+
+- Download and install **Raspberry Pi OS Lite (32-bit)** using **Raspberry Pi Imager**
+- Flash the OS to the SD card
+- Insert the SD card into the Raspberry Pi and power it on
+
+Once booted, connect to the Raspberry Pi via **SSH** (e.g. using PuTTY).
+
+---
+
+### 2️⃣ System Update and Required Packages
+
+Update the system and install required build tools and Python dependencies:
 
 ```bash
-# Clone repository
-git clone https://github.com/dominikelektricar/pimatrixos.git
-cd pimatrixos
+sudo apt update
+sudo apt upgrade -y
 
-# Install dependencies
-pip3 install -r requirements.txt
+sudo apt install -y \
+  git \
+  build-essential \
+  python3 \
+  python3-pil \
+  python3-dev \
+  swig \
+  cython3
 
-# Run PiMatrixOS
-python3 main.py
+sudo apt install -y python3-setuptools python3-wheel
 ```
 
-(Detailed setup and wiring documentation will be added.)
+---
+
+### 3️⃣ Install rpi-rgb-led-matrix Library
+
+PiMatrixOS relies on the excellent **rpi-rgb-led-matrix** library by hzeller.
+
+Clone and build the library:
+
+```bash
+cd ~
+git clone https://github.com/hzeller/rpi-rgb-led-matrix.git
+cd rpi-rgb-led-matrix
+make
+
+cd bindings/python
+make build-python
+sudo python3 setup.py install
+cd ~
+```
+
+---
+
+### 4️⃣ Test LED Matrix Hardware
+
+Before running PiMatrixOS, it is strongly recommended to verify that the LED panels and wiring work correctly.
+
+Run the demo application:
+
+```bash
+cd ~/rpi-rgb-led-matrix
+sudo ./examples-api-use/demo -D 3 \
+  --led-rows=32 --led-cols=64 --led-chain=4 \
+  --led-gpio-mapping=adafruit-hat \
+  --led-panel-type=FM6126A \
+  --led-row-addr-type=0 --led-multiplexing=0 \
+  --led-pixel-mapper="U-mapper;StackToRow:2" \
+  --led-no-hardware-pulse \
+  --led-slowdown-gpio=4 \
+  --led-pwm-bits=7 \
+  --led-brightness=20
+```
+
+Exit the demo using **CTRL + C**.
+
+```bash
+cd ~
+```
+
+---
+
+### 5️⃣ Install and Run PiMatrixOS
+
+Clone the PiMatrixOS repository:
+
+```bash
+git clone https://github.com/dominikelektricar/pimatrixos.git
+cd pimatrixos
+```
+
+Make the launcher executable and start the system:
+
+```bash
+chmod +x launcher.py
+sudo python3 launcher.py
+```
+
+Exit PiMatrixOS using **CTRL + C**.
+
+```bash
+cd ~
+```
+
+---
+
+### ✅ Installation Complete
+
+If the launcher starts and applications are visible on the LED matrix, the installation was successful.
 
 ---
 ## 🔌 Supported Use Cases
